@@ -6,9 +6,45 @@
     <title>Chai aur code | DOM</title>
 </head>
 <body style="background-color: black; color: white;">
-    <ul class="langauge">
+    <ul class="language">
         <li>Javascript</li>
     </ul>
     
 </body>
+<script>
+    function addLanguage(langname){
+        const li = document.createElement('li');
+        li.innerHTML = `${langname}`
+        document.querySelector('.language').
+        appendChild(li)
+    }
+
+    addLanguage("Python")
+    addLanguage("typescript")
+
+    function addOptiLanguage(langName) {
+        const li = document.createElement('li');
+        li.appendChild(document.createTextNode(langName))
+        document.querySelector('.language').appendChild(li)
+    }
+
+    addLanguage("golang")
+
+    // edit
+    const secondLang = document.querySelector("li:nth-child(2)")
+    // secondLang.innerHTML = Mojo
+    const newli = document.createElement('li')
+    newli.textContent = "Mojo"
+    secondLang.replaceWith(newli)
+
+    // edit
+    const firstLang = document.querySelector("li:first-child")
+    firstLang.outerHTML = '<li>Typescript</li>'
+
+    // remove
+    const lastLang = document.querySelector('li:last-child')
+    lastLang.remove()
+
+
+</script>
 </html>
