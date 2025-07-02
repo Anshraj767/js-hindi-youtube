@@ -38,13 +38,21 @@
     // altkey, ctrlkey, shiftkey, keycode
 
     // this is bubbling mode
-    document.getElementById('images').addEventListener('click', function(e){
-        console.log("Clicked inside the ul");
-    },false)
-    document.getElementById('owl').addEventListener('click', function(e){
-        console.log("owl clicked");
-        e.stopPropagation() // the event will not gump to other bubble event.
-    },false)
+    // document.getElementById('images').addEventListener('click', function(e){
+    //     console.log("Clicked inside the ul");
+    // },false)
+    // document.getElementById('owl').addEventListener('click', function(e){
+    //     console.log("owl clicked");
+    //     e.stopPropagation() // the event will not gump to other bubble event.
+    // },false)
+
+    // appling on google link
+    // document.getElementById('google').addEventListener
+    // ('click', function(e){
+    //     console.log("google clicked");
+    //     e.stopPropagation()
+    //     e.preventDefault()
+    // },false)
 
     // this is capturing mode
     // document.getElementById('images').addEventListener('click', function(e){
@@ -53,6 +61,17 @@
     // document.getElementById('owl').addEventListener('click', function(e){
     //     console.log("owl clicked");
     // },true)
+
+
+    // to remove the clicked one
+    document.querySelector('#images').addEventListener('click', function(e){
+        console.log(e.target.tagName);
+        if(e.target.tagName === 'IMG'){
+            console.log(e.target.id);
+            let removeIt = e.target.parentNode;
+            removeIt.remove();
+        }
+    },false)
 
     
     
