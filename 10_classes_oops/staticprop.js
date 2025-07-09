@@ -8,8 +8,19 @@ class User {
     }
 
     createId(){
-        return `123`
+        return `123`;
     }
 }
 
-const 
+const Ansh = new User("Ansh")
+console.log(Ansh.createId())
+
+class Teacher extends User{
+    constructor(email){
+        super(this.username)
+        this.email = email
+    }
+}
+
+const iphone = new Teacher("iphone", "i@gmail.com",)
+console.log(iphone.logme);
